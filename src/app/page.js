@@ -1,3 +1,5 @@
+'use client'
+import React from 'react'
 import './page.scss'
 import Image from "next/image"
 import bamboockImage from '../assets/img/bamboock.png'
@@ -5,6 +7,7 @@ import pandaImage from '../assets/img/panda.png'
 import Link from 'next/link'
 
 const page = () => {
+
   return (
     <main className='main-page-layout'>
       <Image

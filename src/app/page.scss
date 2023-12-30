@@ -55,16 +55,21 @@
     text-align: center;
 }
 
+@keyframes spin {
+    0% {transform:rotate(0deg);}
+    100% {transform:rotate(360deg);}
+}
+
+
 .background-circle{
     position: absolute;
-    top:50%;
-    left:50%;
     transform:translate(-50%, -50%);
-    width: 60%;
-    height: 60%;
+    width: 200px;
+    height: 700px;
     border-radius: 523px;
-    background: #B6CC51;
-    filter: blur(250px);
+    background: #c3dd51;
+    filter: blur(100px);
+    animation: spin 5s linear 0s infinite;
 }
 
 .main-page-glass-button{
@@ -86,6 +91,10 @@
 }
 
 @media screen and (max-width: 800px) {
+    .background-circle{
+        height: 400px;
+        filter: blur(50px);
+    }
     .first-bamboock-img{
         bottom: -150px;
         left: -200px;
@@ -145,6 +154,9 @@
 }
 
 @media screen and (max-width: 420px) {
+    .background-circle{
+        height: 200px;
+    }
     .main-page-panda-img{
         width: 75px;
         height: 65px;
