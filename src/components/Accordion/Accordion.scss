@@ -1,0 +1,43 @@
+.accordion-block{
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid #FFF;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(5px);
+    height: 80px;
+    padding-left: 20px;
+    padding-right: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+.accordion-wrap{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+}
+
+.accordion-info{
+    display: none;
+}
+
+.accordion-icon{
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.accordion-label{
+    cursor: pointer;
+}
+
+@media screen and (max-width: 420px) {
+    .accordion-label{
+        font-size: 16px;
+    }
+    
+    .accordion-icon{
+        width: 16px;
+        height: 10px;
+    }
+}

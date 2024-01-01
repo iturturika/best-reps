@@ -1,0 +1,47 @@
+.guide-header{
+    font-size: 38px;
+    width: 100%;
+    text-align: start;
+}
+
+.guide-page-block{
+    display: flex;
+    width: 1512px;
+    margin: 0 auto;
+    flex-direction: column;
+    margin-top: 20px;
+    row-gap: 20px;
+}
+
+.guide-page-wrap{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    row-gap: 20px;
+}
+
+@media screen and (max-width: 1512px) {
+    .guide-page-block{
+        width: 1250px;
+    }
+
+}
+
+@media screen and (max-width: 1250px) {
+    .guide-page-block{
+        width: 850px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .guide-page-block{
+        align-items: center;
+        width: 420px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .guide-page-block{
+        width: 320px;
+    }
+}

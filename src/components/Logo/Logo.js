@@ -1,10 +1,10 @@
 import './Logo.scss'
 import Image from 'next/image'
 import pandaImage from '../../assets/img/panda.png'
-
+import Link from 'next/link'
 const Logo = ({widthImg, heightImg, fontSize}) => {
   return (
-    <div className="logo">
+    <Link href={'/replicas'} className="logo">
         <Image
             src={pandaImage}
             alt="Picture of the author"
@@ -12,7 +12,7 @@ const Logo = ({widthImg, heightImg, fontSize}) => {
             height={heightImg}
         />
         <p style={{fontSize: fontSize}}>Best-Reps</p>
-    </div>
+    </Link>
   )
 }
 

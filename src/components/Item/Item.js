@@ -1,23 +1,22 @@
-
+'use client'
 import React from 'react'
 import './Item.scss'
 import heart from '../../assets/img/heart.png'
 import heart_active from '../../assets/img/heart_active.png'
 import Image from 'next/image'
-const Item = () => {
+import Link from 'next/link'
+const Item = ({url}) => {
+
   return (
     <div className='item-block'>
         <div className='img-wrap'>
-            <img
-                src={'https://imgsz.pandabuy.com/static/ios/2023-12-29/NormalPI23213189703PandaBuyOriginal2_1703841522838.jpg?image_process=quality,Q_50'}
-                alt="Picture of the author"
-                className='item-image'
-            />
-            <div className='galery-controls'>
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+            <Link href={url + '1'}>
+                <img
+                    src={'https://imgsz.pandabuy.com/static/ios/2023-12-29/NormalPI23213189703PandaBuyOriginal2_1703841522838.jpg?image_process=quality,Q_50'}
+                    alt="Picture of the author"
+                    className='item-image'
+                />
+            </Link>
         </div>
         <p className='item-label'>Very long label for this item on this page on this site</p>
         <div className='item-info'>

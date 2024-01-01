@@ -1,0 +1,40 @@
+.detailed-image-block{
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(5);
+    width: 100%;
+}
+
+.detailed-image-photo{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+}
+
+.control-arrow{
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.50);
+    backdrop-filter: blur(5);
+    width: 70px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.control-arrow:active{
+    background: rgba(255, 255, 255, 0.80);
+}
+
+.detailed-image-controls{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+}
