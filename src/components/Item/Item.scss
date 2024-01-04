@@ -3,12 +3,11 @@
     flex-direction: column;
     padding: 16px;
     width: 410px;
-    height: 460px;
     border: 1px solid #FFF;
     background: rgba(255, 255, 255, 0.50);
     backdrop-filter: blur(5px);
     border-radius: 10px;
-    justify-content: space-between;
+    row-gap: 25px;
 }
 
 .item-image{
@@ -38,7 +37,7 @@
 }
 
 .copy-url-btn{
-    width: 68px;
+    width: 158px;
     height: 28px;
     border-radius: 10px;
     background: #FFF;

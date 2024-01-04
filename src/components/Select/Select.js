@@ -1,10 +1,10 @@
 'use client'
-import React, { useState } from 'react';
+import React from 'react';
 import Select from 'react-select';
 import './Select.scss'
 
-export default function BasicSelect({options, label, id}) {
-    const [selectedOption, setSelectedOption] = useState(null);
+export default function BasicSelect({options, label, id, selectedOption, setSelectedOption}) {
+
   return (
      <Select
         defaultValue={selectedOption}

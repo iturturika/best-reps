@@ -17,7 +17,7 @@ const Header = () => {
             <nav className='nav-links'>
                 <Link href="/guide">Гайд</Link>
                 <Link href="/replicas">Реплики</Link>
-                <Link href="/favourites">Избранные</Link>
+                {/* <Link href="/favourites">Избранные</Link> */}
             </nav>
             <Image
               src={onClickMenu ? closeImg : menuImg}

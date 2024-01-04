@@ -1,3 +1,5 @@
+'use client'
+import React from 'react'
 import Header from '@/components/Header/Header'
 import './page.scss'
 import Item from '@/components/Item/Item'
@@ -9,9 +11,13 @@ const page = () => {
       <div className='favourites-page-block'>
         <h2 className='favourites-header'>Избранные</h2>
         <div className='favourites-page-wrap'>
-            <Item url={'/favourites/'}/>
-            <Item url={'/favourites/'}/>
-            <Item url={'/favourites/'}/>
+            {
+              items.map((item) => {
+                return(
+                  <Item key={item._id} id={item._id} url={'/favourites/'} copyurl={item.url} label={item.label} price={item.price} images={item.images}/>
+                )
+              })
+            }
         </div>
       </div>
     </main>

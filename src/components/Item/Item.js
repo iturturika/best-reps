@@ -5,39 +5,49 @@ import heart from '../../assets/img/heart.png'
 import heart_active from '../../assets/img/heart_active.png'
 import Image from 'next/image'
 import Link from 'next/link'
-const Item = ({url}) => {
-
+const Item = ({url, label, images, copyurl, price, id, addFavourite}) => {
+    const [onClickFavourite, setOnClickFavourite] = React.useState(false);
+    const [copied, setCopied] = React.useState(false);
+    const copy = () => {
+        navigator.clipboard.writeText(copyurl)
+        setCopied(true);
+        setTimeout(() => {
+            setCopied(false);
+        }, 3000)
+    }
   return (
-    <div className='item-block'>
+    <div className='item-block' key={id}>
         <div className='img-wrap'>
-            <Link href={url + '1'}>
+            <Link href={url + id} >
                 <img
-                    src={'https://imgsz.pandabuy.com/static/ios/2023-12-29/NormalPI23213189703PandaBuyOriginal2_1703841522838.jpg?image_process=quality,Q_50'}
+                    src={images[0]}
                     alt="Picture of the author"
                     className='item-image'
                 />
             </Link>
         </div>
-        <p className='item-label'>Very long label for this item on this page on this site</p>
+        <p className='item-label'>{label}</p>
         <div className='item-info'>
-            <p className='item-price'>180 CNY</p>
+            <p className='item-price'>{price} CNY</p>
             <div className='item-controls'>
                 {
-                    false ?
-                    <Image
-                        src={heart}
-                        alt="Picture of the author"
-                        priority
-                        className='favourite-img'
-                    /> :
-                    <Image
-                        src={heart_active}
-                        alt="Picture of the author"
-                        priority
-                        className='favourite-img'
-                    />
+                    //onClickFavourite ?
+                    // <Image
+                    //     src={heart_active}
+                    //     alt="Picture of the author"
+                    //     priority
+                    //     className='favourite-img'
+                    //     onClick={() => {setOnClickFavourite(!onClickFavourite)}}
+                    // /> :
+                    // <Image
+                    //     src={heart}
+                    //     alt="Picture of the author"
+                    //     priority
+                    //     className='favourite-img'
+                    //     onClick={() => {setOnClickFavourite(!onClickFavourite); addFavourite}}
+                    // />
                 }
-                <button className='copy-url-btn'>URL</button>
+                <button className='copy-url-btn' onClick={copy}>{copied ? 'Скопированно' : "Копировать"}</button>
             </div>
         </div>
     </div>
