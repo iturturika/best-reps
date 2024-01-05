@@ -28,6 +28,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
               </div>
@@ -44,6 +45,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
               </div>
@@ -59,6 +61,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
                 <p>Тут вы можете увидеть фото и всю информацию о товаре. Чуть ниже могут быть фото Quality Check по которым вы можете подробнее осмотреть товар, а так же почитать отзывы.</p>
@@ -72,6 +75,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
                 <p>Выберите товары и нажмите кнопку Submit и перейдите к оплате. Тут вы можете выбрать удобный для вас метод оплаты и совершить заказ.</p>
@@ -81,6 +85,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
                 <p>После оплаты посредник займеться оформление вашего заказа и через несколько дней товар прибудет на склад.</p>
@@ -97,6 +102,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
+                    height={500}
                     style={{objectFit: 'fill'}}
                 />
                 <ul>
