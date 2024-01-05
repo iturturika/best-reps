@@ -30,7 +30,7 @@ const Header = () => {
             <nav className='humburger-menu-links' style={onClickMenu ? {display: 'flex'} : null}>
                 <Link href="/guide">Гайд</Link>
                 <Link href="/replicas">Реплики</Link>
-                <Link href="/favourites">Избранные</Link>
+                {/* <Link href="/favourites">Избранные</Link> */}
             </nav>
     </header>
   )
