@@ -5,14 +5,16 @@ import './page.scss';
 import BasicSelect from "@/components/Select/Select";
 import Item from "@/components/Item/Item";
 import axios from "axios";
+import ItemSkeleton from "@/components/ItemSkeleton/ItemSkeleton";
 
 const page = () => {
 
   const [categories, setCategories] = React.useState([]);
   const [brands, setBrands] = React.useState([]);
-  const [category, setCategory] = React.useState(null);
-  const [brand, setBrand] = React.useState(null);
+  const [category, setCategory] = React.useState({value: '', label: 'Категории'});
+  const [brand, setBrand] = React.useState({value: '', label: 'Бренды'});
   const [items, setItems] = React.useState([]);
+  const [loaded, setLoaded]= React.useState(false);
 
   React.useEffect(() => {
     const getCategories = async () => {
@@ -58,7 +60,7 @@ const page = () => {
         const res = await axios.get(process.env.NEXT_PUBLIC_BE_URL + '/items?' + `category=${category.value}&brand=${brand.value}`);
         
         setItems(res.data);
-
+        setLoaded(true);
       } catch (err) {
         return err;
       }
@@ -81,13 +83,24 @@ const page = () => {
           </div>
           <div className="items-block-wrap">
             {
-              items.length > 0 ? items.map((item) => {
-                return(
-                  <Item key={item._id} id={item._id} url={'/replicas/'} copyurl={item.url} label={item.label} price={item.price} images={item.images}/>
-                )
-              })
-              : null
+              loaded ? 
+              <>
+                {
+                  items.length > 0 ? items.map((item) => {
+                    return(
+                      <Item key={item._id} id={item._id} url={'/replicas/'} copyurl={item.url} label={item.label} price={item.price} images={item.images}/>
+                    )
+                  })
+                  : null
+                }
+              </>
+              :
+              <>
+                <ItemSkeleton/>
+
+              </>
             }
+
           </div>
         </div>
       </main>
