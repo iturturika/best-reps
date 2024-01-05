@@ -97,7 +97,9 @@ const page = () => {
               :
               <>
                 <ItemSkeleton/>
-
+                <ItemSkeleton/>
+                <ItemSkeleton/>
+                <ItemSkeleton/>
               </>
             }
 
