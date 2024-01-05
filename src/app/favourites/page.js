@@ -7,7 +7,7 @@ import Item from '@/components/Item/Item'
 const page = () => {
   return (
     <main>
-      <Header />
+      {/* <Header />
       <div className='favourites-page-block'>
         <h2 className='favourites-header'>Избранные</h2>
         <div className='favourites-page-wrap'>
@@ -19,7 +19,7 @@ const page = () => {
               })
             }
         </div>
-      </div>
+      </div> */}
     </main>
   )
 }
