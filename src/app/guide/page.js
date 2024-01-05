@@ -28,7 +28,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
               </div>
             }/>
@@ -44,7 +44,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
               </div>
             }/>
@@ -59,7 +59,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
                 <p>Тут вы можете увидеть фото и всю информацию о товаре. Чуть ниже могут быть фото Quality Check по которым вы можете подробнее осмотреть товар, а так же почитать отзывы.</p>
                 <ul>
@@ -72,7 +72,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
                 <p>Выберите товары и нажмите кнопку Submit и перейдите к оплате. Тут вы можете выбрать удобный для вас метод оплаты и совершить заказ.</p>
                 <Image
@@ -81,7 +81,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
                 <p>После оплаты посредник займеться оформление вашего заказа и через несколько дней товар прибудет на склад.</p>
               </div>
@@ -97,7 +97,7 @@ const page = () => {
                     className='main-page-panda-img'
                     priority
                     width={700}
-                    style={{objectFit: 'contain'}}
+                    style={{objectFit: 'cover'}}
                 />
                 <ul>
                   <li>Перейдите на вкладку warehouse выберите товар и перейдите к оформлению посылки.</li>
