@@ -7,14 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 const Item = ({url, label, images, copyurl, price, id, addFavourite}) => {
     const [onClickFavourite, setOnClickFavourite] = React.useState(false);
-    const [copied, setCopied] = React.useState(false);
-    const copy = () => {
-        navigator.clipboard.writeText(copyurl)
-        setCopied(true);
-        setTimeout(() => {
-            setCopied(false);
-        }, 3000)
-    }
+    
   return (
     <div className='item-block' key={id}>
         <div className='img-wrap'>
@@ -47,7 +40,7 @@ const Item = ({url, label, images, copyurl, price, id, addFavourite}) => {
                     //     onClick={() => {setOnClickFavourite(!onClickFavourite); addFavourite}}
                     // />
                 }
-                <button className='copy-url-btn' onClick={copy}>{copied ? 'Скопированно' : "Копировать"}</button>
+                <Link href={copyurl} target='_blank'><button className='copy-url-btn'>Купить на Pandabuy</button></Link>
             </div>
         </div>
     </div>
