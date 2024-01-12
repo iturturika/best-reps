@@ -25,7 +25,7 @@ const page = () => {
                 <Image
                     src={guideimg1}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
@@ -40,7 +40,7 @@ const page = () => {
                 <Image
                     src={guideimg2}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
@@ -54,7 +54,7 @@ const page = () => {
                 <Image
                     src={guideimg3}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
@@ -66,7 +66,7 @@ const page = () => {
                 <Image
                     src={guideimg4}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
@@ -74,7 +74,7 @@ const page = () => {
                 <Image
                     src={guideimg5}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
@@ -89,7 +89,7 @@ const page = () => {
                 <Image
                     src={guideimg6}
                     alt="Picture of the author"
-                    className='main-page-panda-img'
+                    className='guide-page-img'
                     priority
                     style={{objectFit: 'contain'}}
                 />
