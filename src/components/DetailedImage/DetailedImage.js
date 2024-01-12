@@ -7,14 +7,7 @@ import Link from 'next/link'
 
 const DetailedImage = ({backURL, images, url}) => {
     const [selectedImage, setSelectedImage] = React.useState(0);
-    const [copied, setCopied] = React.useState(false);
-    const copy = () => {
-        navigator.clipboard.writeText(url)
-        setCopied(true);
-        setTimeout(() => {
-            setCopied(false);
-        }, 3000)
-    }
+
   return (
     <div className='detailed-image-block'>
       <div className='detailed-image-wrap'>
@@ -29,9 +22,9 @@ const DetailedImage = ({backURL, images, url}) => {
             </span>
         </Link>
         <img className='detailed-image-photo' src={images[selectedImage]}/>
-        <span style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 13, width: '150px', fontWeight: 700}} className='control-arrow' onClick={copy}>
-            {copied ? 'Скопированно' : "Копировать"}
-        </span>
+        <Link href={url} style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 13, width: '150px', fontWeight: 700}} className='control-arrow' onClick={copy}>
+            Купить на Pandabuy
+        </Link>
         <div className='detailed-image-controls'>
             {
                 selectedImage !== 0 ?
