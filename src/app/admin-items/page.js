@@ -39,7 +39,7 @@ const page = () => {
                         {
                             items.length > 0 ? items.map((item) => {
                                 return(
-                                <Item key={item._id} id={item._id} url={'/replicas/'} copyurl={item.url} label={item.label} price={item.price} images={item.images} withDelete={true}/>
+                                <Item key={item._id} id={item._id} url={'/replicas/'} copyurl={item.url} label={item.label} price={item.price} images={item.images} withDelete={true} token={token}/>
                                 )
                             })
                             : <div style={{width: '100%', height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Ничего не найдено</div>

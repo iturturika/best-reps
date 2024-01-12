@@ -6,7 +6,7 @@ import heart_active from '../../assets/img/heart_active.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import axios from 'axios'
-const Item = ({url, label, images, copyurl, price, id, withDelete}) => {
+const Item = ({url, label, images, copyurl, price, id, withDelete, token}) => {
     const [onClickFavourite, setOnClickFavourite] = React.useState(false);
     const [ifDeleted, setIfDeleted] = React.useState('');
 
@@ -16,7 +16,7 @@ const Item = ({url, label, images, copyurl, price, id, withDelete}) => {
                 id: id
             }, {
                 headers: {
-                  'Authorization': `Bearer ${localStorage.getItem("token")}`
+                  'Authorization': `Bearer ${token}`
                 },
             });
 
