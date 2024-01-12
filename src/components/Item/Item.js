@@ -5,9 +5,30 @@ import heart from '../../assets/img/heart.png'
 import heart_active from '../../assets/img/heart_active.png'
 import Image from 'next/image'
 import Link from 'next/link'
-const Item = ({url, label, images, copyurl, price, id, addFavourite}) => {
+import axios from 'axios'
+const Item = ({url, label, images, copyurl, price, id, withDelete}) => {
     const [onClickFavourite, setOnClickFavourite] = React.useState(false);
-    
+    const [ifDeleted, setIfDeleted] = React.useState('');
+
+    const deleteItem = async (id) => {
+        try {
+            const res = await axios.delete(process.env.NEXT_PUBLIC_BE_URL + "/items", {
+                id: id
+            }, {
+                headers: {
+                  'Authorization': `Bearer ${localStorage.getItem("token")}`
+                },
+            });
+
+            if(res.status = 200){
+                setIfDeleted(true);
+            }
+        } catch (err) {
+            setIfDeleted(false);
+            return err;
+        }
+    }
+
   return (
     <div className='item-block' key={id}>
         <div className='img-wrap'>
@@ -40,7 +61,10 @@ const Item = ({url, label, images, copyurl, price, id, addFavourite}) => {
                     //     onClick={() => {setOnClickFavourite(!onClickFavourite); addFavourite}}
                     // />
                 }
-                <Link href={copyurl} target='_blank'><button className='copy-url-btn'>Купить на Pandabuy</button></Link>
+                {
+                    withDelete ? <button className='copy-url-btn' onClick={() => {deleteItem(id)}}>{ifDeleted ? 'Удалено' : 'Удалить'}</button>
+                    : <Link href={copyurl} target='_blank'><button className='copy-url-btn'>Купить на Pandabuy</button></Link> 
+                }
             </div>
         </div>
     </div>
