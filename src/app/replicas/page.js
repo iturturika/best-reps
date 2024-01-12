@@ -59,9 +59,12 @@ const page = () => {
       try {
         const res = await axios.get(process.env.NEXT_PUBLIC_BE_URL + '/items?' + `category=${category.value}&brand=${brand.value}`);
         
-        setItems(res.data);
-        setLoaded(true);
+        if(res.status === 200){
+          setItems(res.data);
+          setLoaded(true);
+        }
       } catch (err) {
+        setItems([]);
         return err;
       }
     }
@@ -91,7 +94,7 @@ const page = () => {
                       <Item key={item._id} id={item._id} url={'/replicas/'} copyurl={item.url} label={item.label} price={item.price} images={item.images}/>
                     )
                   })
-                  : null
+                  : <div style={{width: '100%', height: '300px', display: 'flex', justifyContent: 'center', alignItems: 'center'}}>Ничего не найдено</div>
                 }
               </>
               :
