@@ -10,15 +10,24 @@ const Item = ({url, label, images, copyurl, price, id, withDelete, token}) => {
     const [onClickFavourite, setOnClickFavourite] = React.useState(false);
     const [ifDeleted, setIfDeleted] = React.useState('');
 
-    const deleteItem = async (id) => {
+    const deleteItem = async () => {
         try {
-            const res = await axios.delete(process.env.NEXT_PUBLIC_BE_URL + "/items", {
-                id: id
-            }, {
-                headers: {
-                  'Authorization': `Bearer ${token}`
-                },
+            let data = JSON.stringify({
+                "id": id
             });
+              
+            let config = {
+            method: 'delete',
+            maxBodyLength: Infinity,
+            url: process.env.NEXT_PUBLIC_BE_URL + "/items",
+            headers: { 
+                'Content-Type': 'application/json', 
+                'Authorization': `Bearer ${token}`
+            },
+            data : data
+            };
+
+            const res = await axios.request(config);
 
             if(res.status = 200){
                 setIfDeleted(true);
@@ -62,7 +71,7 @@ const Item = ({url, label, images, copyurl, price, id, withDelete, token}) => {
                     // />
                 }
                 {
-                    withDelete ? <button className='copy-url-btn' onClick={() => {deleteItem(id)}}>{ifDeleted ? 'Удалено' : 'Удалить'}</button>
+                    withDelete ? <button className='copy-url-btn' onClick={() => {deleteItem()}}>{ifDeleted ? 'Удалено' : 'Удалить'}</button>
                     : <Link href={copyurl} target='_blank'><button className='copy-url-btn'>Купить на Pandabuy</button></Link> 
                 }
             </div>

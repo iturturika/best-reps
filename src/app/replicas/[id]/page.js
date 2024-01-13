@@ -20,7 +20,7 @@ const page = ({params}) => {
     }
 
     getItem();
-  })
+  }, [])
   return (
     <DetailedImage backURL={'/replicas'} images={images} url={url}/>
   )

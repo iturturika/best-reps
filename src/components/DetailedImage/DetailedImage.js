@@ -22,7 +22,7 @@ const DetailedImage = ({backURL, images, url}) => {
             </span>
         </Link>
         <img className='detailed-image-photo' src={images[selectedImage]}/>
-        <Link href={url} style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 13, width: '150px', fontWeight: 700}} className='control-arrow' onClick={copy}>
+        <Link href={url} style={{position: 'fixed', bottom: '20px', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 13, width: '150px', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', textAlign: 'center', textDecoration: 'none', color: '#000'}} target='_blank' className='control-arrow'>
             Купить на Pandabuy
         </Link>
         <div className='detailed-image-controls'>
